@@ -40,4 +40,4 @@ print("Numero de atletas por escalao:")
 for i in range(0, 20):
 	num = idades[i]
 	if (num > 0):
-		print("    [" + str(i * 5) + "-" + str(((i + 1) * 5) - 1) + "]: " + str(num))
+		print("    [" + str(i * 5) + "-" + str(((i + 1) * 5) - 1) + "]: " + str(round(float(num * 100) / float(total_atletas), 2)) + "%")
