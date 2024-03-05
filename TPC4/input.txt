@@ -1,0 +1,2 @@
+SELECT id, nome, salario FROM empregados WHERE salario >= 820
+SELECT ola FROM adeus WHERE naosei = 123.456
