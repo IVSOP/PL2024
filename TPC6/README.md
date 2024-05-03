@@ -62,9 +62,9 @@ LA(p5) = {`+`}
 
 LA(p6) = {`-`}
 
-LA(p7) = Follow(ExpAux) = ??
+LA(p7) = Follow(ExpAux) = Follow(Exp) = {`)`} ∪ Follow(S) = {`)`, `$`}
 
-LA(p8) = Follow(Fator) = ??
+LA(p8) = FirstN(Fator) = {`(`} ∪ {`NUM`} ∪ {`VAR`} = {`(`, `NUM`, `VAR`}
 
 LA(p9) = {`(`}
 
@@ -76,7 +76,7 @@ LA(p12) = {`*`}
 
 LA(p13) = {`/`}
 
-LA(p14) = Follow(TermoAux) = ??
+LA(p14) = Follow(TermoAux) = Follow(Termo) = FirstN(ExpAux) ∪ Follow(ExpAux) = {`+`, `-`} ∪ Follow(Exp) = {`+`, `-`} ∪ FirstN(S) = {`+`, `-`} ∪ {`?`, `!`} ∪ Follow(S) = {`+`, `-`, `?`, `!`, `$`}
 
 LA(p15) = {`VAR`}
 
@@ -86,10 +86,10 @@ LA(p16) = {`NUM`}
 
 LA(p1) ∩ LA(p2) ∩ LA(p3) = {`?`} ∩ {`!`} ∩ {`VAR`} = ∅
 
-LA(p5) ∩ LA(p6) ∩ LA(p7) = {`+`} ∩ {`-`} ∩ {??} = ∅
+LA(p5) ∩ LA(p6) ∩ LA(p7) = {`+`} ∩ {`-`} ∩ {`)`, `$`} = ∅
 
 LA(p9) ∩ LA(p10) ∩ LA(p11) = {`(`} ∩ {`VAR`} ∩ {`NUM`} = ∅
 
-LA(p12) ∩ LA(p13) ∩ LA(p14) = {`*`} ∩ {`/`} ∩ {??} = ∅
+LA(p12) ∩ LA(p13) ∩ LA(p14) = {`*`} ∩ {`/`} ∩ {`+`, `-`, `?`, `!`, `$`} = ∅
 
 LA(p15) ∩ LA(p16) = {`VAR`} ∩ {`NUM`} = ∅
